@@ -31,15 +31,6 @@
     </item>
     
     <item>
-      <title>Search</title>
-      <link>/zh/home/search/</link>
-      <pubDate>Mon, 23 Jul 2018 00:00:00 +0800</pubDate>
-      
-      <guid>/zh/home/search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Skills</title>
       <link>/zh/home/skills/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
@@ -101,6 +92,15 @@
       <guid>/zh/home/about/</guid>
       <description>个人简介 本人目前就读于中央财经大学统计与数学学院，学习数据分析、统计计算以及经济学基本知识，对于探索数据的奥秘甚感兴趣。
 吾偏爱一诗句，愿与诸君共勉：业精于勤荒于嬉，行成于思毁于随。</description>
+    </item>
+    
+    <item>
+      <title>搜索</title>
+      <link>/zh/home/search/</link>
+      <pubDate>Mon, 23 Jul 2018 00:00:00 +0800</pubDate>
+      
+      <guid>/zh/home/search/</guid>
+      <description></description>
     </item>
     
     <item>

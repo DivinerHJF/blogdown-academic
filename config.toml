@@ -341,28 +341,33 @@ enableGitInfo = false
   [languages.zh.params]
     name = "郝建锋"
     role = "学生"
+
+  [[languages.zh.menu.main]]
+    name = "搜索"
+    url = "#search"
+    weight = 1
   
   [[languages.zh.menu.main]]
     name = "日志"
     url = "#posts"
-    weight = 1
+    weight = 2
 
   [[languages.zh.menu.main]]
     name = "文章"
     url = "#projects"
-    weight = 2
+    weight = 3
   
   [[languages.zh.menu.main]]
     name = "报告"
     url = "#publications_selected"
-    weight = 3
+    weight = 4
 
   [[languages.zh.menu.main]]
     name = "关于"
     url = "#about"
-    weight = 4
+    weight = 5
 
   [[languages.zh.menu.main]]
     name = "公告"
     url = "/tutorial/"
-    weight = 5
+    weight = 6
