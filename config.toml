@@ -248,11 +248,6 @@ enableGitInfo = false
     link = "https://www.kaggle.com/haojianfeng"
 
   [[params.social]]
-    icon = "linkedin"
-    icon_pack = "fab"
-    link = "https://www.linkedin.com/in/%E5%BB%BA%E9%94%8B-%E9%83%9D-ba3826133/"
-
-  [[params.social]]
     icon = "github"
     icon_pack = "fab"
     link = "https://github.com/DivinerHJF"
