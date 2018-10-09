@@ -341,6 +341,7 @@ enableGitInfo = false
   [languages.zh.params]
     name = "郝建锋"
     role = "学生"
+    avatar = "portrait.jpg"
   
   [[languages.zh.menu.main]]
     name = "关于"
