@@ -6,7 +6,7 @@ active = true
 date = 2016-04-20T00:00:00
 
 title = "日志"
-subtitle = "记录平日琐事"
+subtitle = "平日琐事、异想天开"
 
 # Order that this section will appear in.
 weight = 11

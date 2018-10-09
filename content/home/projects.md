@@ -5,7 +5,7 @@ active = true
 date = 2016-04-20T00:00:00
 
 title = "文章"
-subtitle = "工具、软件评析"
+subtitle = "工具使用、软件评析"
 
 # Order that this section will appear in.
 weight = 12
