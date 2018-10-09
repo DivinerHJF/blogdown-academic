@@ -4,8 +4,8 @@ widget = "projects"
 active = true
 date = 2016-04-20T00:00:00
 
-title = "Projects"
-subtitle = ""
+title = "文章"
+subtitle = "工具、软件评析"
 
 # Order that this section will appear in.
 weight = 12
@@ -30,15 +30,23 @@ filter_default = 0
 # To filter by a specific tag, set `tag` to an existing tag name.
 # To remove toolbar, delete/comment all instances of `[[filter]]` below.
 [[filter]]
-  name = "All"
+  name = "全部"
   tag = "*"
 
 [[filter]]
-  name = "Deep Learning"
+  name = "人工智能"
   tag = "Deep Learning"
 
 [[filter]]
-  name = "Other"
+  name = "软件"
+  tag = "software"
+
+[[filter]]
+  name = "语法"
+  tag = "syntax"
+
+[[filter]]
+  name = "其他"
   tag = "Demo"
 
 +++
