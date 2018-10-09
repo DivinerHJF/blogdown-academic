@@ -1,6 +1,4 @@
 # Configuration of Academic
-relativeurls = true
-
 # Documentation: https://sourcethemes.com/academic/
 #
 # This file is formatted using TOML syntax - learn more at https://learnxinyminutes.com/docs/toml/
@@ -8,7 +6,7 @@ relativeurls = true
 
 # The URL of your website.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-baseurl = "/"
+baseurl = "https://www.divinerhjf.com/"
 
 # Title of your site
 title = "Divinerhjf's BLOG"
