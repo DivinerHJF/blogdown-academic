@@ -337,7 +337,7 @@ enableGitInfo = false
 # Uncomment the lines below to configure your website in a second language.
 [languages.zh]
   languageCode = "zh-Hans"
-  title = "郝建锋的个人网站"
+  title = "Diviner's BLOG | 郝建锋的个人网站"
   [languages.zh.params]
     name = "郝建锋"
     role = "学生"
