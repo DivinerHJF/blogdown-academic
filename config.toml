@@ -243,9 +243,9 @@ enableGitInfo = false
     link = "jianfeng.hao@qq.com"
 
   [[params.social]]
-    icon = "kaggle"
+    icon = "linkedin"
     icon_pack = "fab"
-    link = "https://www.kaggle.com/haojianfeng"
+    link = "https://www.linkedin.com/in/%E5%BB%BA%E9%94%8B-%E9%83%9D-ba3826133/"
 
   [[params.social]]
     icon = "github"
