@@ -6,8 +6,8 @@ widget = "publications_selected"
 active = true
 date = 2016-04-20T00:00:00
 
-title = "Selected Publications"
-subtitle = ""
+title = "报告"
+subtitle = "数据报告、研究论文"
 
 # Order that this section will appear in.
 weight = 14

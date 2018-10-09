@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Diviner&#39;s BLOG | 郝建锋的个人网站</title>
-    <link>/zh/publication/</link>
+    <link>https://www.divinerhjf.com/zh/publication/</link>
     <description>Recent content in Publications on Diviner&#39;s BLOG | 郝建锋的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="/zh/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.divinerhjf.com/zh/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>/zh/publication/person-re-identification/</link>
+      <link>https://www.divinerhjf.com/zh/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0800</pubDate>
       
-      <guid>/zh/publication/person-re-identification/</guid>
+      <guid>https://www.divinerhjf.com/zh/publication/person-re-identification/</guid>
       <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
     </item>
     
     <item>
       <title>Mobile visual clothing search</title>
-      <link>/zh/publication/clothing-search/</link>
+      <link>https://www.divinerhjf.com/zh/publication/clothing-search/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0800</pubDate>
       
-      <guid>/zh/publication/clothing-search/</guid>
+      <guid>https://www.divinerhjf.com/zh/publication/clothing-search/</guid>
       <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
     </item>
     

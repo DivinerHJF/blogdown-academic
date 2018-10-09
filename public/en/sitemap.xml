@@ -4,10 +4,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/zh/categories/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/categories/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/categories/" hreflang="zh"/>
     
-      <loc>/en/categories/</loc>
+      <loc>https://www.divinerhjf.com/en/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -15,10 +15,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/zh/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/" hreflang="zh"/>
     
-      <loc>/en/</loc>
+      <loc>https://www.divinerhjf.com/en/</loc>
       <priority>0</priority>
     </url>
     
@@ -26,10 +26,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/zh/publication_types/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/publication_types/" hreflang="zh"/>
     
-      <loc>/en/publication_types/</loc>
+      <loc>https://www.divinerhjf.com/en/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -37,10 +37,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="/en/tags/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="/zh/tags/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/tags/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/tags/" hreflang="zh"/>
     
-      <loc>/en/tags/</loc>
+      <loc>https://www.divinerhjf.com/en/tags/</loc>
       <priority>0</priority>
     </url>
     
