@@ -292,10 +292,10 @@ enableGitInfo = false
   url = "/tutorial/"
   weight = 5
 
-[[menu.main]]
-  name = "Contact"
-  url = "#contact"
-  weight = 6
+# [[menu.main]]
+#  name = "Contact"
+#  url = "#contact"
+#  weight = 6
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -348,7 +348,7 @@ enableGitInfo = false
     weight = 1
   
   [[languages.zh.menu.main]]
-  name = "文章"
+  name = "报告"
   url = "#publications_selected"
   weight = 2
 
@@ -358,11 +358,11 @@ enableGitInfo = false
   weight = 3
 
   [[languages.zh.menu.main]]
-  name = "项目"
+  name = "文章"
   url = "#projects"
   weight = 4
 
   [[languages.zh.menu.main]]
-  name = "报告"
+  name = "公告"
   url = "/tutorial/"
   weight = 5
