@@ -18,10 +18,8 @@ authors = ["郝建锋"]
 publication_types = ["4"]
 
 # Publication name and optional abbreviated version.
-# publication = "狗熊会人才计划"
+publication = "狗熊会人才计划"
 # publication_short = "In *ICMEW*"
-
-event = "狗熊会人才计划"
 
 # Abstract and optional shortened version.
 abstract = "这里写摘要。"
