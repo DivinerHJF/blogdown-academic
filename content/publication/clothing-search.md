@@ -15,7 +15,7 @@ authors = ["郝建锋"]
 # 4 = Report
 # 5 = Book
 # 6 = Book section
-publication_types = ["1"]
+publication_types = ["4"]
 
 # Publication name and optional abbreviated version.
 # publication = "狗熊会人才计划"
