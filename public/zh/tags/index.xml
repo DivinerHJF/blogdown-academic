@@ -2,85 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Diviner&#39;s BLOG | 郝建锋的个人网站</title>
-    <link>https://www.divinerhjf.com/zh/tags/</link>
+    <link>/zh/tags/</link>
     <description>Recent content in Tags on Diviner&#39;s BLOG | 郝建锋的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://www.divinerhjf.com/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Academic</title>
-      <link>https://www.divinerhjf.com/zh/tags/academic/</link>
+      <link>/zh/tags/academic/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/academic/</guid>
+      <guid>/zh/tags/academic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>https://www.divinerhjf.com/zh/tags/deep-learning/</link>
+      <link>/zh/tags/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/deep-learning/</guid>
+      <guid>/zh/tags/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Demo</title>
-      <link>https://www.divinerhjf.com/zh/tags/demo/</link>
+      <link>/zh/tags/demo/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/demo/</guid>
+      <guid>/zh/tags/demo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://www.divinerhjf.com/zh/tags/r-markdown/</link>
+      <link>/zh/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/r-markdown/</guid>
+      <guid>/zh/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>https://www.divinerhjf.com/zh/tags/plot/</link>
+      <link>/zh/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/plot/</guid>
+      <guid>/zh/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://www.divinerhjf.com/zh/tags/regression/</link>
+      <link>/zh/tags/regression/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/tags/regression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>个人计划</title>
-      <link>https://www.divinerhjf.com/zh/tags/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/</link>
-      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.divinerhjf.com/zh/tags/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>网站架构</title>
-      <link>https://www.divinerhjf.com/zh/tags/%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84/</link>
-      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.divinerhjf.com/zh/tags/%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84/</guid>
+      <guid>/zh/tags/regression/</guid>
       <description></description>
     </item>
     

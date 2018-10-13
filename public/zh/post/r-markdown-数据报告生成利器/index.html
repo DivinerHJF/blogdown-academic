@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 2.4.0">
+  <meta name="generator" content="Hugo 0.49" />
+  <meta name="author" content="郝建锋">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等）。">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="/zh/post/r-markdown-%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90%E5%88%A9%E5%99%A8/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
+  
+
+  <link rel="stylesheet" href="/zh/styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Diviner&#39;s BLOG | 郝建锋的个人网站">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Diviner&#39;s BLOG | 郝建锋的个人网站">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/zh/post/r-markdown-%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90%E5%88%A9%E5%99%A8/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Diviner&#39;s BLOG | 郝建锋的个人网站">
+  <meta property="og:url" content="/zh/post/r-markdown-%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90%E5%88%A9%E5%99%A8/">
+  <meta property="og:title" content="R Markdown-数据报告生成利器 | Diviner&#39;s BLOG | 郝建锋的个人网站">
+  <meta property="og:description" content="R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等）。">
+  
+  
+    
+  <meta property="og:image" content="/img/http:/pblv0vj27.bkt.clouddn.com/hex-rmarkdown.png">
+  <meta property="og:locale" content="zh-Hans">
+  
+  <meta property="article:published_time" content="2018-10-12T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-10-12T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>R Markdown-数据报告生成利器 | Diviner&#39;s BLOG | 郝建锋的个人网站</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/zh">Diviner&#39;s BLOG | 郝建锋的个人网站</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/#search">
+            
+            <span>搜索</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/#posts">
+            
+            <span>日志</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/#projects">
+            
+            <span>文章</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/#publications_selected">
+            
+            <span>报告</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/#about">
+            
+            <span>关于</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/zh/tutorial/">
+            
+            <span>公告</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+<div class="article-header">
+  
+  
+    <img src="http://pblv0vj27.bkt.clouddn.com/hex-rmarkdown.png" class="article-banner" itemprop="image">
+  
+
+  <span class="article-header-caption">R Markdown</span>
+</div>
+
+
+
+  <div class="article-container">
+    <h1 itemprop="name">R Markdown-数据报告生成利器</h1>
+
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="郝建锋">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-10-12 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-10-12 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Oct 12, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="郝建锋">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 分钟阅读时间
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/zh/post/r-markdown-%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90%E5%88%A9%E5%99%A8/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/zh/categories/r/">R</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20Markdown-%e6%95%b0%e6%8d%ae%e6%8a%a5%e5%91%8a%e7%94%9f%e6%88%90%e5%88%a9%e5%99%a8&amp;url=%2fzh%2fpost%2fr-markdown-%25E6%2595%25B0%25E6%258D%25AE%25E6%258A%25A5%25E5%2591%258A%25E7%2594%259F%25E6%2588%2590%25E5%2588%25A9%25E5%2599%25A8%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fzh%2fpost%2fr-markdown-%25E6%2595%25B0%25E6%258D%25AE%25E6%258A%25A5%25E5%2591%258A%25E7%2594%259F%25E6%2588%2590%25E5%2588%25A9%25E5%2599%25A8%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fzh%2fpost%2fr-markdown-%25E6%2595%25B0%25E6%258D%25AE%25E6%258A%25A5%25E5%2591%258A%25E7%2594%259F%25E6%2588%2590%25E5%2588%25A9%25E5%2599%25A8%2f&amp;title=R%20Markdown-%e6%95%b0%e6%8d%ae%e6%8a%a5%e5%91%8a%e7%94%9f%e6%88%90%e5%88%a9%e5%99%a8"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fzh%2fpost%2fr-markdown-%25E6%2595%25B0%25E6%258D%25AE%25E6%258A%25A5%25E5%2591%258A%25E7%2594%259F%25E6%2588%2590%25E5%2588%25A9%25E5%2599%25A8%2f&amp;title=R%20Markdown-%e6%95%b0%e6%8d%ae%e6%8a%a5%e5%91%8a%e7%94%9f%e6%88%90%e5%88%a9%e5%99%a8"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20Markdown-%e6%95%b0%e6%8d%ae%e6%8a%a5%e5%91%8a%e7%94%9f%e6%88%90%e5%88%a9%e5%99%a8&amp;body=%2fzh%2fpost%2fr-markdown-%25E6%2595%25B0%25E6%258D%25AE%25E6%258A%25A5%25E5%2591%258A%25E7%2594%259F%25E6%2588%2590%25E5%2588%25A9%25E5%2599%25A8%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>此篇文章翻译自谢益辉新书 <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank">《R Markdown: The Definitive Guide》</a> 的前三章节，内容有所删减，主要介绍了 R Markdown 的相关结构及语法规则，如果想了解更多更详细的内容推荐您阅读原书。</p>
+
+<h1 id="安装">安装</h1>
+
+<p>这里假设您已经安装了 R (<a href="https://www.r-project.org/" target="_blank">https://www.r-project.org</a>)  和 RStudio IDE (<a href="https://www.rstudio.com/" target="_blank">https://www.rstudio.com</a>) 。Rstudio 并不是必须的，但安装它会使您更加容易地使用 R Markdown。如果您没有安装 RStudio IDE，您将不得不安装 Pandoc（ <a href="http://pandoc.org" target="_blank">http://pandoc.org</a> ），否则就不需要单独安装 Pandoc，因为在安装 RStudio 时已经将它捆绑安装了。接下来，您可以在 R 中安装 <code>rmarkdown</code> 包：</p>
+
+<pre><code class="language-R"># Install from CRAN
+install.packages('rmarkdown')
+
+# Or if you want to test the development version,
+# install from GitHub
+if (!requireNamespace(&quot;devtools&quot;))
+  install.packages('devtools')
+devtools::install_github('rstudio/rmarkdown')
+</code></pre>
+
+<p>如果您想要生成 PDF 类型文档输出，您将需要安装 LaTeX 。对于那些以前没有安装过 LaTeX 的 R Markdown 用户，我们建议您安装 TinyTeX（<a href="https://yihui./tinytex/）：" target="_blank">https://yihui./tinytex/）：</a></p>
+
+<pre><code class="language-R">install.packages(&quot;tinytex&quot;)
+tinytex::install_tinytex()  # install TinyTeX
+</code></pre>
+
+<p>TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，<code>tinytex</code> 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。</p>
+
+<p>使用 <code>rmarkdown</code> 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。</p>
+
+<blockquote>
+<p><strong>参考文献</strong></p>
+
+<ul>
+<li>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.r-project.org/" target="_blank">https://www.R-project.org/</a>.</li>
+<li>Xie, Yihui. 2018f. <em>Tinytex: Helper Functions to Install and Maintain Tex Live, and Compile Latex Documents</em>. <a href="https://github.com/yihui/tinytex" target="_blank">https://github.com/yihui/tinytex</a>.</li>
+</ul>
+</blockquote>
+
+<hr />
+
+<h1 id="基础知识">基础知识</h1>
+
+<p>R Markdown 为数据科学提供了一个创作框架。R Markdown 能胜任以下两个任务：</p>
+
+<ul>
+<li>保存并执行代码；</li>
+<li>生成可共享的高质量报告。</li>
+</ul>
+
+<p>R Markdown 的设计初衷是为了更容易地实现报告内容的可重复性，这是因为计算代码和叙述都在同一个文档中，结果是由源代码自动生成的。并且 R Markdown 支持数十种静态和动态/交互式输出格式。</p>
+
+<p>如果您更喜欢观看视频进行学习，我们建议您查看网站 <a href="https://rmarkdown.rstudio.com" target="_blank">https://rmarkdown.rstudio.com</a>，并在 “Get Started ” 中观看视频，其中包括了 R Markdown 的基础知识。</p>
+
+<h2 id="文档结构">文档结构</h2>
+
+<p>下面是一份非常简易的 R Markdown 文档，是一个带有 <code>.Rmd</code> 拓展名的纯文本文档。</p>
+
+<pre><code class="language-yaml">---
+title: &quot;Hello R Markdown&quot;
+author: &quot;Awesome Me&quot;
+date: &quot;2018-02-14&quot;
+output: html_document
+---
+</code></pre>
+
+<pre><code class="language-markdown">This is a paragraph in an R Markdown document.
+
+Below is a code chunk:
+
+```{r}
+fit = lm(dist ~ speed, data = cars)
+b   = coef(fit)
+plot(cars)
+abline(fit)
+```
+
+The slope of the regression is `r b[1]`.
+```
+</code></pre>
+
+<p>您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 <code>File -&gt; New File -&gt; R Markdown</code> 中创建一个新的 Rmd 文档。</p>
+
+<p>一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 <code>---</code> 之间的内容。元数据的语法是 YAML（ <a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML 不是标记语言</a> ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 <a href="https://bookdown.org/yihui/bookdown/r-markdown.html" target="_blank">附录b.2</a> 来了解一些简单的例子，这些示例展示了 YAML 语法。</p>
+
+<p>文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释：</p>
+
+<ul>
+<li><strong>代码块</strong>：以三个重音符及所使用语言开始，其中 <code>r</code> 代表所使用的程序语言，并以三个重音符结束。 可以在花括号中填写块选项（如：将图形高度设置为5英寸：<code>{r, fig.height=5}</code>）。</li>
+<li><strong>内联代码</strong>：以 `<code>r</code> 开始，并以单个重音符结束。</li>
+</ul>
+
+<h2 id="文档编译">文档编译</h2>
+
+<p>最简单的方式莫过于在 RStudio 中单击 <code>Knit</code> 按钮，对应的快捷键为 <code>Ctrl + Shift + K</code> （在 macOS 中为 <code>Cmd + Shift + K</code>）。当然也可以直接运行代码 <code>rmarkdown::render</code> 来进行渲染编译，如：</p>
+
+<pre><code class="language-R">rmarkdown::render('foo.Rmd', 'pdf_document')
+</code></pre>
+
+<p>当编译多个文档时，使用函数更加方便，因为可以直接使用循环来进行渲染编译。</p>
+
+<h2 id="参考卡片">参考卡片</h2>
+
+<p>RStudio 已经创建了大量的参考卡片，它们可以在 <a href="https://www.rstudio.com/resources/cheatsheets/" target="_blank">https://www.rstudio.com/resources/cheatsheets/</a> 上免费获得。</p>
+
+<h2 id="输出格式">输出格式</h2>
+
+<p>有两种输出格式：documents 和 presentations 。所有可用的格式如下所示 ：</p>
+
+<ul>
+<li><code>beamer_presentation</code></li>
+<li><code>github_document</code></li>
+<li><code>html_document</code></li>
+<li><code>ioslides_presentation</code></li>
+<li><code>latex_document</code></li>
+<li><code>md_document</code></li>
+<li><code>odt_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>powerpoint_presentation</code></li>
+<li><code>rtf_document</code></li>
+<li><code>slidy_presentation</code></li>
+<li><code>word_document</code></li>
+</ul>
+
+<p>我们将在第 3 章和第 4 章详细地记录这些输出格式。在其他扩展包中提供了更多的输出格式（从第 5 章开始）。对于 Rmd 文件的 YAML 元数据中的输出格式名称，如果格式来自扩展包，您需要包含包名（若格式来自于 <code>rmarkdown</code> 包，则不需要 <code>rmarkdown::</code>前缀 ），例如：</p>
+
+<pre><code class="language-yaml">output: tufte::tufte_html
+</code></pre>
+
+<p>每种输出格式通常都有多种格式选项。所有这些选项都记录在 R 包 help 页面上。例如，您可以在 R 中键入 <code>?rmarkdown::</code> 打开关于 <code>html_document</code> 格式的 help 页面。当您想要使用某些选项时，必须将这些值从 R 转换成 YAML，例如：</p>
+
+<pre><code class="language-R">html_document(toc = TRUE, toc_depth = 2, dev = 'svg')
+</code></pre>
+
+<p>可以用 YAML 写为：</p>
+
+<pre><code class="language-yaml">output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    dev: 'svg'
+</code></pre>
+
+<p>YAML 中的字符串通常不需要引号（`<code>dev：“svg”</code> 和 <code>dev:svg</code> 是相同的），除非它们包含特殊字符，比如冒号 <code>：</code>。如果您不确定是否应该引用字符串，那么用 <code>yaml</code> 包来测试它，例如：</p>
+
+<pre><code class="language-R">cat(yaml::as.yaml(list(
+  title = 'A Wonderful Day',
+  subtitle = 'hygge: a quality of coziness'
+)))
+
+## title: A Wonderful Day
+## subtitle: 'hygge: a quality of coziness'
+</code></pre>
+
+<p>注意，上面例子中的副标题是由于冒号而引用单引号的。</p>
+
+<p>如果某一选项有子选项（这意味着该选项的值是 R 中的列表），则子选项需要进一步缩进，例如：</p>
+
+<pre><code class="language-yaml">output:
+  html_document:
+    toc: true
+    includes:
+      in_header: header.html
+      before_body: before.html
+</code></pre>
+
+<p>一些选项将被传递给 <strong>knitr</strong> ，比如 <code>dev</code>、<code>fig_width</code> 和 <code>fig_height</code>。这些选项的详细文档可以在 <a href="https://yihui.name/knitr/options/" target="_blank">knitr 文档页面</a> 上找到。请注意，实际的 knitr 选项名称可能有所不同。特别是，knitr 在名称中使用 <code>.</code>，但 rmarkdown 使用 <code>_</code>，例如，在 rmarkdown 中，<code>fig_width</code>  对应于knitr 中的 <code>fig.width</code> 。</p>
+
+<p>一些选项将被传递给 <strong>Pandoc</strong>，比如 <code>toc</code>、<code>toc_depth</code> 和 <code>number_sections</code> 。当有疑问时，您应该参考 Pandoc 文档。R Markdown 输出格式函数通常有一个<code>pandoc_args</code>  参数，它应该是传递给 Pandoc 的参数的字符向量。如果您发现任何没有由输出格式参数表示的 Pandoc 特性，您可以使用这个终极论证，例如：</p>
+
+<pre><code class="language-yaml">output:
+  pdf_document:
+    toc: true
+    pandoc_args: [&quot;--wrap=none&quot;, &quot;--top-level-division=chapter&quot;]
+</code></pre>
+
+<h2 id="markdown-语法">Markdown 语法</h2>
+
+<h3 id="内联格式">内联格式</h3>
+
+<ul>
+<li><p><em>斜体</em> ：<code>_text_</code> 或 <code>*text*</code></p></li>
+
+<li><p><strong>粗体</strong> ：<code>**text**</code></p></li>
+
+<li><p>下标 ：<code>H~3~PO~4~</code>  渲染为 $H_3PO_4$</p></li>
+
+<li><p>上标 ：<code>Cu^2+^</code>  渲染为 $Cu^{2+}$</p></li>
+
+<li><p>脚注 ： <code>^[This is a footnote.]</code></p></li>
+
+<li><p>内联代码 ：<code>`code`</code> , 可以使用 n+1 个重音符输出包含 n 个重音符的代码块。</p></li>
+
+<li><p>超链接 ：<code>[text](link)</code></p></li>
+
+<li><p>图片链接 ： <code>![alt text or image title](path/to/image)</code></p></li>
+
+<li><p>引用 ：</p></li>
+</ul>
+
+<pre><code class="language-ruby">  @Manual{R-base,
+    title = {R: A Language and Environment for Statistical
+      Computing},
+    author = {{R Core Team}},
+    organization = {R Foundation for Statistical Computing},
+    address = {Vienna, Austria},
+    year = {2017},
+    url = {https://www.R-project.org/},
+  }
+</code></pre>
+
+<h3 id="块级元素">块级元素</h3>
+
+<ul>
+<li><strong>标题</strong></li>
+</ul>
+
+<pre><code class="language-Markdown">  # First-level header
+  
+  ## Second-level header
+  
+  ### Third-level header
+</code></pre>
+
+<p>如果不想让某个标题被编号，可以在标题后面添加 <code>{-}</code> 或者 <code>{.unnumbered}</code>，如：</p>
+
+<pre><code class="language-Markdown">  # Preface {-} 
+</code></pre>
+
+<ul>
+<li><strong>无序列表</strong></li>
+</ul>
+
+<pre><code class="language-Markdown">  - one item
+  - one item
+  - one item
+    - one more item
+    - one more item
+    - one more item
+</code></pre>
+
+<ul>
+<li><strong>有序列表</strong></li>
+</ul>
+
+<pre><code class="language-Markdown">  1. the first item
+  2. the second item
+  3. the third item
+    - one unordered item
+    - one unordered item
+</code></pre>
+
+<ul>
+<li><strong>引用</strong></li>
+</ul>
+
+<pre><code class="language-Markdown">  &gt; &quot;I thoroughly disapprove of duels. If a man should challenge me,
+    I would take him kindly and forgivingly by the hand and lead him
+    to a quiet place and kill him.&quot;
+  &gt;
+  &gt;                                                 --- Mark Twain
+</code></pre>
+
+<blockquote>
+<p>&ldquo;I thoroughly disapprove of duels. If a man should challenge me,
+I would take him kindly and forgivingly by the hand and lead him
+to a quiet place and kill him.&rdquo;</p>
+
+<p>​                                               &mdash; Mark Twain</p>
+</blockquote>
+
+<ul>
+<li><strong>代码块</strong></li>
+</ul>
+
+<pre><code class="language-Markdown">  ```
+  This text is displayed verbatim / preformatted
+  ```
+  
+  Or indent by four spaces:
+  
+      This text is displayed verbatim / preformatted
+</code></pre>
+
+<h3 id="数学表达式">数学表达式</h3>
+
+<p><code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> :  $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</p>
+
+<p><code>$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$</code> :</p>
+
+<p>$$
+f(k) = {n \choose k} p^{k} (1-p)^{n-k}
+$$</p>
+
+<hr />
+
+<h2 id="代码块选项">代码块选项</h2>
+
+<p>单击 <code>Insert</code> 按钮，对应快捷键为 <code>Ctrl + Alt + I</code> （macOS：<code>Cmd + Option + I</code> ）。</p>
+
+<p>在 <a href="https://yihui.name/knitr/options" target="_blank">https://yihui.name/knitr/options</a> 中有大量的代码块可选项，在此我们列出常用的一部分：</p>
+
+<ul>
+<li><code>eval=TRUE</code> ：执行当前代码块；</li>
+</ul>
+
+<pre><code class="language-R">  ```{r}
+  # execute code if the date is later than a specified day
+  do_it = Sys.Date() &gt; '2018-02-14'
+  ```
+  
+  ```{r, eval=do_it}
+  x = rnorm(100)
+  ```
+</code></pre>
+
+<ul>
+<li><p><code>echo=TRUE</code> ：输出源代码；</p></li>
+
+<li><p><code>result</code> ：当设置为 <code>'hide'</code> ，文本输出将被隐藏；当设置为 <code>'asis'</code> ，文本输出将被 “原样” 书写。</p></li>
+
+<li><p><code>collapse=TRUE</code> ：将文本输出和源代码合并为单个代码块输出，更加紧凑；</p></li>
+
+<li><p><code>warning</code>, <code>message</code>,  <code>error</code> ：是否在输出文档中显示警告、消息和错误；</p></li>
+
+<li><p><code>include=FALSE</code> ：运行当前代码并且不显示任何源代码与输出结果；</p></li>
+
+<li><p><code>cache</code> ：是否启用高速缓存。如果启用了缓存，则在下一次编译文档时不会对相同的代码块进行评估（如果代码块没有被修改），这将节省您的时间；</p></li>
+
+<li><p><code>fig.width</code>，<code>fig.height</code> ：（图形设备）块的大小（英寸）。注意：<code>fig.dim = c(6, 4)</code> 意味着 <code>fig.width = 6</code> 并且 <code>fig.height = 4</code>；</p></li>
+
+<li><p><code>out.width</code>， <code>out.height</code> ：输出文档中 R 图片的输出大小。可以使用百分比，例如 <code>out.width = '80%'</code> 表示页面宽度的 80%；</p></li>
+
+<li><p><code>fig.align</code> ：图片的对齐方式；</p></li>
+
+<li><p><code>dev</code> ：图形设备保存 R 图片的格式。如 <code>'pdf'</code>, <code>'png'</code>, <code>'svg'</code>, <code>'jpeg'</code>；</p></li>
+
+<li><p><code>fig.cap</code> ：图片标题；</p></li>
+
+<li><p><code>child</code> ：您可以在主文档中包含子文档。这个选项选择一条通向外部文件的路径。</p></li>
+</ul>
+
+<p>如果某个选项需要经常被设置为多个代码块中的值，您可以考虑在文档的第一个代码块中全局设置它：</p>
+
+<pre><code class="language-R">```{r, setup, include=FALSE}
+knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
+```
+</code></pre>
+
+<h3 id="图片">图片</h3>
+
+<p>本地图片亦可以使用代码块选项进行调节，例如：</p>
+
+<pre><code class="language-R">```{r, out.width='25%', fig.align='center', fig.cap='...'}
+knitr::include_graphics('images/hex-rmarkdown.png')
+```
+</code></pre>
+
+<p>如果您想要淡入一个不是由 R 代码生成的图形，您可以使用 <code>knitr::include_graphics()</code>  函数，它使您能够更好地控制图像的属性，而不是像 <code>![alt text or image title](path/to/image)</code> 这样的 Markdown 语法难以调解图片属性。</p>
+
+<h3 id="表格">表格</h3>
+
+<p>使用 <code>knitr::kable()</code>  函数可以简易的创建表格，表格标题可以通过 <code>caption</code>  来设置，例如：</p>
+
+<pre><code class="language-R">```{r tables-mtcars}
+knitr::kable(iris[1:5, ], caption = 'A caption')
+```
+</code></pre>
+
+<p>如果您正在寻找更高级的表格样式控制，建议您使用 <a href="https://cran.r-project.org/package=kableExtra" target="_blank">kableExtra</a> 包，它提供了定制 PDF 和 HTML 表格外观的功能。在第 12.3 节中解释了 <code>bookdown</code> 包如何扩展 rmarkdown 的功能，以允许在文本中轻松地交叉引用数字和表格。</p>
+
+<blockquote>
+<p><strong>参考文献</strong></p>
+
+<ul>
+<li>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.name/knitr/" target="_blank">https://yihui.name/knitr/</a>.</li>
+</ul>
+</blockquote>
+
+<hr />
+
+<h1 id="输出文档">输出文档</h1>
+
+<h2 id="html-文档">HTML 文档</h2>
+
+<p>为了输出 HTML 文档，首先要在 YAML 元数据中写入 <code>output: html_document</code> ：</p>
+
+<pre><code class="language-yaml">---
+title: Habits
+author: John Doe
+date: March 22, 2005
+output: html_document
+---
+</code></pre>
+
+<h3 id="目录-table-of-contents">目录（Table of contents）</h3>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+        collapsed: false
+        smooth_scroll: false
+---
+</code></pre>
+
+<ul>
+<li><code>toc: true</code> ：输出目录；</li>
+<li><code>toc_depth</code> ：所输出标题的最小级别；</li>
+<li><code>toc_float: true</code> ：目录悬停于内容左侧，并一直可见；</li>
+<li><code>collapsed</code> (默认为 <code>TRUE</code>)  ：初始只显示顶级标题，随内容滚动目录逐级展开；</li>
+<li><code>smooth_scroll</code> (默认为 <code>TRUE</code>) ：点击目录标题是否导航到指定内容。</li>
+</ul>
+
+<h3 id="目录编号-section-numbering">目录编号 (Section numbering)</h3>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    toc: true
+    number_sections: true
+---
+</code></pre>
+
+<p>注意，如果文档中没有一级标题，那么二级标题将被命名为 <code>0.1</code>, <code>0.2</code> ……</p>
+
+<h3 id="选项卡-tabbed-sections">选项卡 (Tabbed sections)</h3>
+
+<pre><code class="language-markdown">## Quarterly Results {.tabset .tabset-fade .tabset-pills}
+
+### By Product
+
+(tab content)
+
+### By Region
+
+(tab content)
+</code></pre>
+
+<p><img src="https://bookdown.org/yihui/rmarkdown/images/tabset.png" alt="Tabbed sections" /></p>
+
+<ul>
+<li><code>.tabset</code>  ：使主标题的所有子标题与 .tabset 属性一起出现在选项卡中，而不是作为独立的部分；</li>
+<li><code>.tabset-fade</code>  ：选项卡切换时淡入淡出；</li>
+<li><code>.tabset-pills</code>  ：改变选项卡外观，使其类似 “药丸”。</li>
+</ul>
+
+<h3 id="外观与风格">外观与风格</h3>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+</code></pre>
+
+<ul>
+<li><code>theme</code>  ：主题是从 <a href="https://bootswatch.com/3/" target="_blank">Bootswatch</a> 主题库中提取的，适用的主题包括：<code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, 和 <code>yeti</code>.</li>
+<li><code>highlight</code> ：代码高亮模式。支持的风格包括： <code>default</code>,  <code>tango</code>,  <code>pygments</code>,  <code>kate</code>,  <code>monochrome</code>,  <code>espresso</code>,  <code>zenburn</code>,  <code>haddock</code> 和 <code>textmate</code>.<br /></li>
+</ul>
+
+<h3 id="图片选项">图片选项</h3>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    fig_width: 7
+    fig_height: 6
+    fig_caption: true
+---
+</code></pre>
+
+<ul>
+<li><code>fig_width</code> 和 <code>fig_height</code>  ：图片宽度和高度；</li>
+<li><code>fig_caption</code>  ：控制图片是否包括标题；</li>
+<li><code>dev</code>  ：图片渲染格式，默认为 <code>png</code>。</li>
+</ul>
+
+<h3 id="表格打印">表格打印</h3>
+
+<p>默认表格输出格式为：</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Option</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">default</td>
+<td align="left">Call the <code>print.data.frame</code> generic method</td>
+</tr>
+
+<tr>
+<td align="center">kable</td>
+<td align="left">Use the <code>knitr::kable</code> function</td>
+</tr>
+
+<tr>
+<td align="center">tibble</td>
+<td align="left">Use the <code>tibble::print.tbl_df</code> function</td>
+</tr>
+
+<tr>
+<td align="center">paged</td>
+<td align="left">Use <code>rmarkdown::print.paged_df</code> to create a pageable table</td>
+</tr>
+</tbody>
+</table>
+
+<p>设定为 paged 格式后输出形式为：</p>
+
+<pre><code class="language-yaml">---
+title: &quot;Motor Trend Car Road Tests&quot;
+output:
+  html_document:
+    df_print: paged
+---
+
+​``` {r, rows.print=5}
+mtcars
+​``` 
+</code></pre>
+
+<p><img src="https://bookdown.org/yihui/rmarkdown/images/paged.png" alt="mtcars" /></p>
+
+<p>TABLE 3.2: The options for paged HTML tables.</p>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>max.print</td>
+<td>The number of rows to print.</td>
+</tr>
+
+<tr>
+<td>max.print</td>
+<td>The number of rows to print.</td>
+</tr>
+
+<tr>
+<td>cols.print</td>
+<td>The number of columns to display.</td>
+</tr>
+
+<tr>
+<td>cols.min.print</td>
+<td>The minimum number of columns to display.</td>
+</tr>
+
+<tr>
+<td>pages.print</td>
+<td>The number of pages to display under page navigation.</td>
+</tr>
+
+<tr>
+<td>pages.print</td>
+<td>The number of pages to display under page navigation.</td>
+</tr>
+
+<tr>
+<td>rownames.print</td>
+<td>When set to <code>FALSE</code> turns off row names.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="代码折叠">代码折叠</h3>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    code_folding: hide
+---
+</code></pre>
+
+<ul>
+<li><code>code_folding: hide</code> ：初始默认不显示代码，查看者可点击进行显示；</li>
+<li><code>code_folding: show</code> ：初始默认显示代码，查看者可点击进行隐藏；</li>
+</ul>
+
+<h3 id="高级定制">高级定制</h3>
+
+<h4 id="保留-markdown-文件">保留 Markdown 文件</h4>
+
+<p>当运行一个 R Markdown 文件（<code>*.Rmd</code>）时，将创造一个 Markdown 文件（<code>*.md</code>）并将该文件通过 Pandoc 转换为 HTML 文件。如果想要保留 Markdown 文件，可以使用 <code>keep_md</code> 选项：</p>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    keep_md: true
+---
+</code></pre>
+
+<h4 id="添加本地-html-文档">添加本地 HTML 文档</h4>
+
+<p>可以通过添加额外的 HTML 内容或完全替换核心 Pandoc 模板来完成更高级的输出定制。为了在文档头部或文档主体之前/之后包含内容，您可以使用以下选项：</p>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    includes:
+      in_header: header.html
+      before_body: doc_prefix.html
+      after_body: doc_suffix.html
+---
+</code></pre>
+
+<h4 id="自定义模板">自定义模板</h4>
+
+<pre><code class="language-yaml">---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    template: quarterly_report.html
+---
+</code></pre>
+
+<p>有关模板的其他详细信息，请参考 <a href="http://pandoc.org/MANUAL.html#templates" target="_blank">Pandoc 模板</a> 上的文档。您还可以研究默认的 HTML 模板 <a href="https://github.com/jgm/pandoc-templates/" target="_blank"><code>default.html5</code></a> 。</p>
+
+<p>其他类型文档格式控制方式类似，如欲详细了解请 <a href="https://bookdown.org/yihui/rmarkdown/documents.html" target="_blank">参考原作</a> 。</p>
+
+<hr />
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/zh/tags/r-markdown/">R Markdown</a>
+  
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>相关</h3>
+      <ul>
+        
+        <li><a href="/zh/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+    <div class="article-widget">
+      <div class="post-nav">
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">上一页</div>
+    <a href="/zh/post/getting-started/" rel="prev">Academic: the website designer for Hugo</a>
+  </div>
+  
+</div>
+
+    </div>
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "divinerhjf" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/zh/privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex2jax: { inlineMath: [ ['$', '$'], ['\\(','\\)'] ], displayMath: [ ['$$','$$'], ['\\[', '\\]'] ], processEscapes: false },
+        TeX: { noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+      });
+    </script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//divinerhjf.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "搜索...",
+        'results': "搜索结果",
+        'no_results': "没有找到结果"
+      };
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

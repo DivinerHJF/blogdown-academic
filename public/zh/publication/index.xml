@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications on Diviner&#39;s BLOG | 郝建锋的个人网站</title>
-    <link>https://www.divinerhjf.com/zh/publication/</link>
+    <link>/zh/publication/</link>
     <description>Recent content in Publications on Diviner&#39;s BLOG | 郝建锋的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://www.divinerhjf.com/zh/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh/publication/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>这是一份报告</title>
-      <link>https://www.divinerhjf.com/zh/publication/clothing-search/</link>
+      <link>/zh/publication/clothing-search/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/publication/clothing-search/</guid>
+      <guid>/zh/publication/clothing-search/</guid>
       <description>这里可以写上一些备注。</description>
     </item>
     
     <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
-      <link>https://www.divinerhjf.com/zh/publication/person-re-identification/</link>
+      <link>/zh/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/publication/person-re-identification/</guid>
+      <guid>/zh/publication/person-re-identification/</guid>
       <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
     </item>
     

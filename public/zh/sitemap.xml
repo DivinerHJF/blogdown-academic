@@ -4,15 +4,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/post/%E6%96%B0%E7%BD%91%E7%AB%99-%E6%96%B0%E6%B0%94%E8%B1%A1/</loc>
-      <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://www.divinerhjf.com/zh/publication/clothing-search/</loc>
+      <loc>/zh/publication/clothing-search/</loc>
       <lastmod>2018-10-10T00:00:00+08:00</lastmod>
     </url>
     
@@ -20,7 +12,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tutorial/example/</loc>
+      <loc>/zh/tutorial/example/</loc>
       <lastmod>2018-09-09T00:00:00+08:00</lastmod>
     </url>
     
@@ -28,7 +20,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tutorial/</loc>
+      <loc>/zh/tutorial/</loc>
       <lastmod>2018-09-09T00:00:00+08:00</lastmod>
     </url>
     
@@ -36,7 +28,15 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/talk/example-talk/</loc>
+      <loc>/zh/privacy/</loc>
+      <lastmod>2018-06-28T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>/zh/talk/example-talk/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -44,7 +44,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/post/</loc>
+      <loc>/zh/post/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -52,7 +52,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/publication/</loc>
+      <loc>/zh/publication/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -60,7 +60,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/talk/</loc>
+      <loc>/zh/talk/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -68,7 +68,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/project/deep-learning/</loc>
+      <loc>/zh/project/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00+08:00</lastmod>
     </url>
     
@@ -76,7 +76,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/project/example-external-project/</loc>
+      <loc>/zh/project/example-external-project/</loc>
       <lastmod>2016-04-27T00:00:00+08:00</lastmod>
     </url>
     
@@ -84,7 +84,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/post/getting-started/</loc>
+      <loc>/zh/post/getting-started/</loc>
       <lastmod>2018-01-13T00:00:00+08:00</lastmod>
     </url>
     
@@ -92,7 +92,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/publication/person-re-identification/</loc>
+      <loc>/zh/publication/person-re-identification/</loc>
       <lastmod>2015-09-01T00:00:00+08:00</lastmod>
     </url>
     
@@ -100,7 +100,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/post/2015-07-23-r-rmarkdown/</loc>
+      <loc>/zh/post/2015-07-23-r-rmarkdown/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     </url>
     
@@ -108,7 +108,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/publication_types/2/</loc>
+      <loc>/zh/publication_types/2/</loc>
       <lastmod>2015-09-01T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -117,7 +117,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/publication_types/4/</loc>
+      <loc>/zh/publication_types/4/</loc>
       <lastmod>2018-10-10T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -126,7 +126,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/academic/</loc>
+      <loc>/zh/tags/academic/</loc>
       <lastmod>2018-01-13T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -135,10 +135,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/categories/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/categories/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/categories/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/categories/" hreflang="en"/>
     
-      <loc>https://www.divinerhjf.com/zh/categories/</loc>
+      <loc>/zh/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -146,7 +146,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/deep-learning/</loc>
+      <loc>/zh/tags/deep-learning/</loc>
       <lastmod>2016-04-27T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -155,7 +155,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/demo/</loc>
+      <loc>/zh/tags/demo/</loc>
       <lastmod>2016-04-27T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -164,10 +164,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/" hreflang="en"/>
     
-      <loc>https://www.divinerhjf.com/zh/</loc>
+      <loc>/zh/</loc>
       <lastmod>2017-10-15T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -176,7 +176,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/project/</loc>
+      <loc>/zh/project/</loc>
       <lastmod>2016-04-27T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -185,10 +185,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/publication_types/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/publication_types/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/publication_types/" hreflang="en"/>
     
-      <loc>https://www.divinerhjf.com/zh/publication_types/</loc>
+      <loc>/zh/publication_types/</loc>
       <lastmod>2015-09-01T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -197,7 +197,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/categories/r/</loc>
+      <loc>/zh/categories/r/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -206,7 +206,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/r-markdown/</loc>
+      <loc>/zh/tags/r-markdown/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -215,7 +215,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/slides/</loc>
+      <loc>/zh/slides/</loc>
       <priority>0</priority>
     </url>
     
@@ -223,17 +223,17 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/slides/example-slides/</loc>
+      <loc>/zh/slides/example-slides/</loc>
     </url>
     
   
     
     <url>
     
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/zh/tags/" hreflang="zh"/>
-      <xhtml:link rel="alternate" href="https://www.divinerhjf.com/en/tags/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="/zh/tags/" hreflang="zh"/>
+      <xhtml:link rel="alternate" href="/en/tags/" hreflang="en"/>
     
-      <loc>https://www.divinerhjf.com/zh/tags/</loc>
+      <loc>/zh/tags/</loc>
       <lastmod>2018-01-13T00:00:00+08:00</lastmod>
       <priority>0</priority>
     </url>
@@ -242,7 +242,7 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/plot/</loc>
+      <loc>/zh/tags/plot/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
       <priority>0</priority>
     </url>
@@ -251,35 +251,8 @@
     
     <url>
     
-      <loc>https://www.divinerhjf.com/zh/tags/regression/</loc>
+      <loc>/zh/tags/regression/</loc>
       <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://www.divinerhjf.com/zh/tags/%E4%B8%AA%E4%BA%BA%E8%AE%A1%E5%88%92/</loc>
-      <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://www.divinerhjf.com/zh/categories/%E7%BD%91%E7%AB%99/</loc>
-      <lastmod>2018-10-12T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://www.divinerhjf.com/zh/tags/%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84/</loc>
-      <lastmod>2018-10-12T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

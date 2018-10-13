@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>4 on Diviner&#39;s BLOG | 郝建锋的个人网站</title>
-    <link>https://www.divinerhjf.com/zh/publication_types/4/</link>
+    <link>/zh/publication_types/4/</link>
     <description>Recent content in 4 on Diviner&#39;s BLOG | 郝建锋的个人网站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 10 Oct 2018 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="https://www.divinerhjf.com/zh/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/zh/publication_types/4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>这是一份报告</title>
-      <link>https://www.divinerhjf.com/zh/publication/clothing-search/</link>
+      <link>/zh/publication/clothing-search/</link>
       <pubDate>Wed, 10 Oct 2018 00:00:00 +0800</pubDate>
       
-      <guid>https://www.divinerhjf.com/zh/publication/clothing-search/</guid>
+      <guid>/zh/publication/clothing-search/</guid>
       <description>这里可以写上一些备注。</description>
     </item>
     
